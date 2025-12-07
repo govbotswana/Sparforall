@@ -1,11 +1,6 @@
 <!DOCTYPE html><html lang="en" dir="ltr"><head>
         
-<script>
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            } else {
-                window.location.href = "http://www.goern.com";
-            }
-        </script>
+
 
 <title>Spr 1 2025</title>
 <meta charset="utf-8">
@@ -33,7 +28,7 @@
     margin: 0;
     padding: 0;
     font-family: Poppins, Droid Arabic Naskh;
-    font-weight: 14px;
+    font-size: 14px;
     box-sizing: border-box;
   text-align:center;
 
@@ -125,10 +120,8 @@ Participate now and win many valuable prizes
 </div>
 <div class="right">
 <vue-box-picker v-if="showBoxPicker" :vertical-items="4" lid-image="https://i.imgur.com/ppQh4XE.png" box-image="https://i.imgur.com/l34UCgQ.png" box-back-image="https://i.imgur.com/ve5fhRU.png" prize-image="https://i.imgur.com/KwJJSUf.png" v-on:fail="onBoxPickerFail" v-on:success="onBoxPickerSuccess" :horizontal-items="3" :max-clicks="2"></vue-box-picker>
-<div class="verify" v-if="showRotator">
-<vue-text-rotator v-on:rotate="rotate" v-on:finished="onRotatorFinished" :strings="[
-                     " please="" wait="" ...",="" "please="" ..."="" ]"="">
-</vue-text-rotator>
+<div class="verify" v-if="showRotator">_
+<vue-text-rotator v-on:rotate="rotate" v-on:finished="onRotatorFinished" :strings='["Please wait ...", "Please wait ..."]'></vue-text-rotator>
 <div class="verify__text" v-if="rotateIndex > 1">
 <strong>
 You have answered all of the questions.
@@ -160,9 +153,20 @@ Stock is being checked
 <img class="verify__icon verify__icon--spinner" :class="{'verify__icon--visible' : rotateIndex > 2 }" src="images/2U02Ltr.gif" alt="">
 </div>
 </div>
-<vue-survey v-if="showSurvey" :show-steps="true" :questions="[
+<vue-survey v-if="showSurvey" :show-steps="true" :questions='[
            {
-              title: " do="" you="" know="" spar?",="" answers:="" [="" {="" text:="" "yes"="" },="" "no"="" }="" ]="" title:="" "whats="" your="" gender?="" ",="" "male"="" "female"="" "how="" old="" are="" you?",="" "18-21"="" "22-29"="" "30-39"="" "40-59"="" "60+"="" would="" rate="" spar?="" "amazing"="" "very="" good"="" "good"="" "not="" "would="" recommend="" us="" to="" friend?="" ]"="" v-on:finish="onSurveyFinish"></vue-survey>
+              title: "Do you know Spar?",
+              answers: [ { text: "Yes" }, { text: "No" } ]
+           },
+           {
+              title: "What is your gender?",
+              answers: [ { text: "Male" }, { text: "Female" } ]
+           },
+           {
+              title: "How would you rate Spar?",
+              answers: [ { text: "Amazing" }, { text: "Very Good" }, { text: "Good" }, { text: "Not so good" } ]
+           }
+         ]' v-on:finish="onSurveyFinish"></vue-survey>
 </div>
 </div>
 
@@ -171,9 +175,8 @@ Stock is being checked
 <script src="js/app.js" type="application/javascript"></script>
 <script>
 function go() {
-    window.onbeforeunload = null;
-	window.open('engshare');
-    window.location = '#';
+    PreventExitPop = false;
+    window.location.href = window.view.offerUrl;
 }
 </script>
   
